@@ -40,8 +40,6 @@ no automatic model downloads or dependencies on the training project.
 
 ## Model files
 
-The Hugging Face release is pending. The links below identify the planned model repositories.
-
 Download the EMA inference weights and matching configs from Hugging Face.
 
 | Model | Hugging Face |
@@ -63,7 +61,7 @@ Each model repo contains:
 Download the 500M bundle with the Hugging Face CLI:
 
 ```bash
-hf download NoobDoge/brainmri-vit-vae3d-500m-ema
+HF_HOME=/working/huggingface_cache hf download NoobDoge/brainmri-vit-vae3d-500m-ema
 ```
 
 Use the returned snapshot directory for the inference examples below.

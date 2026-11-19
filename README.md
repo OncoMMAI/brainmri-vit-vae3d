@@ -40,15 +40,15 @@ no automatic model downloads or dependencies on the training project.
 
 ## Model files
 
-Download the EMA inference weights and matching configs from Hugging Face.
+All three EMA inference checkpoints are available in one [Hugging Face model repository](https://huggingface.co/NoobDoge/brainmri-vit-vae3d). Each model has its own subdirectory.
 
 | Model | Hugging Face |
 |---|---|
-| ViT-VAE 500M | [EMA weights](https://huggingface.co/NoobDoge/brainmri-vit-vae3d-500m-ema) |
-| ViT-VAE 250M | [EMA weights](https://huggingface.co/NoobDoge/brainmri-vit-vae3d-250m-ema) |
-| CNN VAE | [EMA weights](https://huggingface.co/NoobDoge/brainmri-vit-vae3d-cnn-246m-ema) |
+| ViT-VAE 500M | [`vit-500m/`](https://huggingface.co/NoobDoge/brainmri-vit-vae3d/tree/main/vit-500m) |
+| ViT-VAE 250M | [`vit-250m/`](https://huggingface.co/NoobDoge/brainmri-vit-vae3d/tree/main/vit-250m) |
+| CNN VAE | [`cnn-246m/`](https://huggingface.co/NoobDoge/brainmri-vit-vae3d/tree/main/cnn-246m) |
 
-Each model repo contains:
+Each model directory contains:
 
 - `model.safetensors` — float32 EMA inference weights only.
 - `config.json` — architecture.
@@ -61,10 +61,11 @@ Each model repo contains:
 Download the 500M bundle with the Hugging Face CLI:
 
 ```bash
-HF_HOME=/working/huggingface_cache hf download NoobDoge/brainmri-vit-vae3d-500m-ema
+HF_HOME=/working/huggingface_cache hf download NoobDoge/brainmri-vit-vae3d --include 'vit-500m/*'
 ```
 
-Use the returned snapshot directory for the inference examples below.
+Use the `vit-500m/` subdirectory of the returned snapshot as the model folder
+in the inference examples below.
 The CLI stores downloads under its configured Hugging Face cache.
 
 The architecture configuration is also available locally at

@@ -46,7 +46,7 @@ not included in the public code repository.
 
 ## Latent normalization statistics
 
-Each model repo includes `latent_stats.json`, computed with
+Each model directory includes `latent_stats.json`, computed with
 `scripts/compute_latent_stats.py` from the first 1,000 deterministically sampled
 training volumes (seed `20261119`, posterior mean, 192x192x144 input grid). These
 are explicitly marked `subset_estimate: true`; they are sufficient as an initial

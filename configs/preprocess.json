@@ -1,0 +1,33 @@
+{
+  "orientation": "RAS",
+  "target_spacing_mm": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "ants_interpolation_code": 1,
+  "use_voxels": false,
+  "array_order": "DHW",
+  "intensity_clip_percentiles": [
+    0.5,
+    99.5
+  ],
+  "normalization_eps": 1e-08,
+  "image_normalization": "percentile_clip_to_0_1",
+  "input_range": [
+    0.0,
+    1.0
+  ],
+  "padding_multiple": [
+    8,
+    8,
+    8
+  ],
+  "padding_value": 0.0,
+  "padding_mode": "symmetric_zero",
+  "ct_padding_repair": true,
+  "ct_sentinel_hu": -3024.0,
+  "ct_air_hu": -1000.0,
+  "latent_normalization": "none",
+  "output_scale": "source"
+}

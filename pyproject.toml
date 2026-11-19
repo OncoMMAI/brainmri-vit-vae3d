@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "brainmri-vit-vae3d"
+version = "0.2.0"
+description = "Volumetric VAE inference for brain MRI and medical imaging"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.5,<3", "numpy>=1.26,<3", "safetensors>=0.4,<1"]
+
+[project.optional-dependencies]
+nifti = ["antspyx>=0.5,<0.7", "scipy>=1.11,<2"]
+test = ["pytest>=8,<10", "antspyx>=0.5,<0.7", "scipy>=1.11,<2"]
+
+[project.scripts]
+vae3d-reconstruct = "vae3d.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["vae3d*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
